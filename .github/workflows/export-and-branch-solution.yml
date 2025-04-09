@@ -9,7 +9,7 @@ on:
       solution_name:
         description: 'name of the solution to worked on from Power Platform'
         required: true
-        default: ALMLab
+        default: testsol
        #Do Not change these values
       solution_exported_folder:
         description: 'folder name for staging the exported solution *do not change*'
@@ -25,9 +25,9 @@ on:
        default: solutions/
 env:
 #edit your values here
-  ENVIRONMENT_URL: 'https://org782bb948.crm5.dynamics.com'
-  CLIENT_ID: 'f900e548-f499-49a4-a8eb-7cc4be6b9178'
-  TENANT_ID: 'dc1cc126-fd70-48a2-94be-7647a6f7db2f'
+  ENVIRONMENT_URL: 'https://orgbd240ea4.crm.dynamics.com'
+  CLIENT_ID: '83773476-a3b8-4b66-afa9-47308044ca5b'
+  TENANT_ID: '4ad526cf-cc88-435a-96d7-8b0a4c07f5e8'
 permissions:
   contents: write
 jobs:
