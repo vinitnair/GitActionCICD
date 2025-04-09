@@ -1,4 +1,4 @@
-name: release-solution-to-prod-reusable
+name: release-solution-to-QA-reusable
 # Reusable workflow
 # convert solution to managed (using a build PowerPlatform environment for the conversion)
 # upload the solution to the GitHub artifacts and deploy to the PROD environment
@@ -11,7 +11,7 @@ on:
       solution_name:
         description: 'The solution name.'
         type: string
-        default: TestSolution       
+        default: testsol       
       solution_shipping_folder:
         description: 'folder name for staging the exported solution *do not change*'        
         type: string
@@ -32,8 +32,8 @@ on:
         description: 'Build environment url.'
         type: string
         required: true      
-      PRODUCTION_ENVIRONMENT_URL: 
-        description: 'Production environment url.'
+      QA_ENVIRONMENT_URL: 
+        description: 'QA environment url.'
         type: string
         required: true
       CLIENT_ID: 
@@ -112,10 +112,10 @@ jobs:
       with:
         name: managedSolutions
         path: ${{ inputs.solution_release_folder}}
-    - name: Import solution to prod env
+    - name: Import solution to QA env
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
-        environment-url: ${{inputs.PRODUCTION_ENVIRONMENT_URL}}
+        environment-url: ${{inputs.QA_ENVIRONMENT_URL}}
         app-id: ${{inputs.CLIENT_ID}}
         client-secret: ${{ secrets.envSecret }}
         tenant-id: ${{inputs.TENANT_ID}}
