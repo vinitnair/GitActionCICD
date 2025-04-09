@@ -57,6 +57,9 @@ jobs:
       RUNNER_DEBUG: 1
 
     steps:
+    - name: powerplatform-actions
+      uses: microsoft/powerplatform-actions@v1.8.0
+  
     - uses: actions/checkout@v2
       with:
         lfs: true
